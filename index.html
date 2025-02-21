@@ -3,27 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMYK vs RGB</title>
+    <title>Modelos de Cores: RGB e CMYK</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Diferença entre CMYK e RGB</h1>
-    <p>O modelo CMYK é utilizado para impressão, enquanto o modelo RGB é usado para telas digitais.</p>
-    
-    <div class="container">
-        <div class="box rgb-box">
-            <h2>RGB</h2>
-            <p>Usado para telas digitais.</p>
-            <p>Componentes: Vermelho, Verde e Azul.</p>
-            <p>Exemplo de cor: RGB(255, 0, 0) → Vermelho</p>
-        </div>
+    <header>
+        <h1>Entendendo os Modelos de Cores: RGB e CMYK</h1>
+        <p>Uma explicação detalhada sobre os sistemas de cores aditivo e subtrativo</p>
+    </header>
+
+    <section class="section">
+        <h2>Modelo RGB (Aditivo)</h2>
+        <p>O modelo RGB é um sistema aditivo de cores usado em dispositivos eletrônicos como monitores, smartphones e TVs. Neste modelo, as cores são criadas pela adição de luz nas três cores primárias:</p>
+        <ul>
+            <li><strong>R</strong> - Vermelho (Red)</li>
+            <li><strong>G</strong> - Verde (Green)</li>
+            <li><strong>B</strong> - Azul (Blue)</li>
+        </ul>
         
-        <div class="box cmyk-box">
-            <h2>CMYK</h2>
-            <p>Usado para impressão.</p>
-            <p>Componentes: Ciano, Magenta, Amarelo e Preto.</p>
-            <p>Exemplo de cor: Magenta.</p>
+        <div class="pixel-demo">
+            <div class="pixel">
+                <div class="subpixels">
+                    <div class="subpixel red"></div>
+                    <div class="subpixel green"></div>
+                    <div class="subpixel blue"></div>
+                </div>
+                <p>Estrutura de um pixel RGB</p>
+            </div>
         </div>
-    </div>
+
+        <p>Cada cor tem uma intensidade que varia de 0 a 255. Por exemplo:</p>
+        <ul>
+            <li>RGB(255, 0, 0) = Vermelho puro</li>
+            <li>RGB(255, 255, 0) = Amarelo</li>
+            <li>RGB(255, 255, 255) = Branco</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="data:image/png;base64,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" 
+                 alt="Diagrama mostrando como as cores RGB se combinam">
+            <p class="image-caption">Diagrama de combinação de cores no modelo RGB</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Modelo CMYK (Subtrativo)</h2>
+        <p>O CMYK é um modelo subtrativo usado principalmente em impressão. As cores são formadas pela subtração de luz através de pigmentos:</p>
+        <ul>
+            <li><strong>C</strong> - Ciano (Cyan)</li>
+            <li><strong>M</strong> - Magenta (Magenta)</li>
+            <li><strong>Y</strong> - Amarelo (Yellow)</li>
+            <li><strong>K</strong> - Preto (Key/Black)</li>
+        </ul>
+
+        <p>O preto (K) é adicionado por razões práticas:</p>
+        <ul>
+            <li>Economia de tinta colorida</li>
+            <li>Melhor contraste e profundidade</li>
+            <li>Textos mais nítidos</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="https://instrucoes.graficacores.com.br/wp-content/uploads/2021/12/Prancheta-3-e1640278270447.png" 
+                 alt="Demonstração do processo de impressão CMYK">
+            <p class="image-caption">Processo de impressão usando as cores CMYK</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Comparação entre RGB e CMYK</h2>
+        <div class="comparison">
+            <div class="comparison-box">
+                <h3>RGB (Aditivo)</h3>
+                <ul>
+                    <li>Usado em dispositivos eletrônicos</li>
+                    <li>Adiciona luz para criar cores</li>
+                    <li>Ausência de luz = Preto</li>
+                    <li>Todas as cores = Branco</li>
+                </ul>
+            </div>
+            <div class="comparison-box">
+                <h3>CMYK (Subtrativo)</h3>
+                <ul>
+                    <li>Usado em impressão</li>
+                    <li>Subtrai luz para criar cores</li>
+                    <li>Ausência de tinta = Branco</li>
+                    <li>Todas as cores = Preto</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1LIvieJRheeUrScLr_2KAEdPnzTz4Ahb1LQ&s"0 
+                 alt="Comparação visual entre RGB e CMYK">
+            <p class="image-caption">Diferenças visuais entre os modelos RGB e CMYK</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Como os Pixels Funcionam</h2>
+        <p>Cada pixel em uma tela é composto por três subpixels (vermelho, verde e azul). A intensidade de cada subpixel determina a cor final que vemos. Quando todos os subpixels estão em intensidade máxima, vemos branco. Quando todos estão desligados, vemos preto.</p>
+
+        <div class="image-container">
+            <img src="https://razor.com.br/wp-content/uploads/2022/06/2-4.webp" 
+                 alt="Estrutura microscópica de pixels em uma tela">
+            <p class="image-caption">Visualização microscópica de pixels em uma tela LCD</p>
+        </div>
+    </section>
 </body>
 </html>
